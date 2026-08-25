@@ -1,5 +1,6 @@
 import sys
 
+
 def resolve_prompt(prompt):
     stdin_prompt = ""
 
@@ -14,11 +15,12 @@ def resolve_prompt(prompt):
     if not prompt:
         raise ValueError("A prompt is required for compare command")
 
+
 def resolve_fragments(fragments, db=None):
     if not fragments:
         return []
 
-    try: 
+    try:
         from llm.cli import resolve_fragments as core_resolve_fragments
     except ImportError as ie:
         raise ValueError(
