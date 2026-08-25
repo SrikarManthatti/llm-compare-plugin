@@ -42,7 +42,7 @@ def run_compare(
     log_responses=True,
 ):
     options = options or {}
-    attachments = attachments or {}
+    attachments = attachments or []
     fragements = fragements or []
 
     def run_model(model_id):
