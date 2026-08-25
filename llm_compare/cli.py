@@ -57,3 +57,5 @@ def register_compare_command(cli):
             display_side_by_side(results)
         else:
             display_one_by_one(results)
+
+    cli.add_command(compare)

@@ -36,21 +36,21 @@ def run_compare(
     system=None,
     options=None,
     attachments=None,
-    fragements=None,
+    fragments=None,
     database=None,
     max_workers=8,
     log_responses=True,
 ):
     options = options or {}
     attachments = attachments or []
-    fragements = fragements or []
+    fragments = fragments or []
 
     def run_model(model_id):
         try:
             model = llm.get_model(model_id)
             validated = _validated_options(model, options)
             conversation = model.conversation()
-            kwargs = dict(system=system, attachments=attachments, fragements=fragements)
+            kwargs = dict(system=system, attachments=attachments, fragments=fragments)
             kwargs.update(validated)
             response = conversation.prompt(prompt, **kwargs)
             response.text()

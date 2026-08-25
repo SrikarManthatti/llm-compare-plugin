@@ -14,6 +14,7 @@ def resolve_prompt(prompt):
         prompt = stdin_prompt
     if not prompt:
         raise ValueError("A prompt is required for compare command")
+    return prompt
 
 
 def resolve_fragments(fragments, db=None):
